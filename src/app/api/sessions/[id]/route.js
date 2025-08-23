@@ -27,7 +27,7 @@ export async function GET(req, { params }) {
 
 export async function PATCH(req, { params }) {
   try {
-    const id = params?.id;
+    const id = await params?.id;
     if (!id) return new Response(JSON.stringify({ message: "Missing session ID" }), { status: 400 });
 
     const body = await req.json();
@@ -59,7 +59,7 @@ export async function PATCH(req, { params }) {
 
 export async function DELETE(req, { params }) {
   try {
-    const id = params?.id;
+    const id = await params?.id;
     if (!id) return new Response(JSON.stringify({ message: "Missing session ID" }), { status: 400 });
 
     const client = await clientPromise;

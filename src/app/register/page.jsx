@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { User, Mail, Lock, Eye, EyeOff, Sparkles } from "lucide-react";
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const registerSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),

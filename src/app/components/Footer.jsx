@@ -1,11 +1,20 @@
+"use client"
 import React from 'react'
 import { FaEarthAmericas } from 'react-icons/fa6';
 import { IoIosCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import { usePathname } from 'next/navigation';
 
 
 export default function Footer() {
+
+    const pathname = usePathname();
+
+    if (pathname.startsWith('/userdashboard')) {
+        return null;
+    }
+
     return (
         <div>
             <div>

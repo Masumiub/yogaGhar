@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { FaTachometerAlt, FaPlusCircle, FaCalendarAlt, FaUsers } from 'react-icons/fa';
-
+import { MdEditCalendar } from 'react-icons/md';
+import { IoArrowBack } from "react-icons/io5";
 
 export default function AdminLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -30,7 +31,8 @@ export default function AdminLayout({ children }) {
     { href: '/userdashboard', label: 'Dashboard', icon: <FaTachometerAlt /> },
     { href: '/userdashboard/create-session', label: 'Create Session', icon: <FaPlusCircle /> },
     { href: '/userdashboard/published-sessions', label: 'Published Sessions', icon: <FaCalendarAlt /> },
-    { href: '/userdashboard/draft-sessions', label: 'Draft Sessions', icon: <FaCalendarAlt /> },
+    { href: '/userdashboard/draft-sessions', label: 'Draft Sessions', icon: <MdEditCalendar />},
+        { href: '/', label: 'Back to Home', icon: <IoArrowBack />},
   ];
 
 
@@ -72,7 +74,7 @@ export default function AdminLayout({ children }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block px-4 py-2 rounded hover:bg-gray-200 ${pathname === link.href ? 'bg-gray-200 font-semibold' : ''
+                className={`block px-4 py-2 rounded hover:bg-base-200 ${pathname === link.href ? 'bg-base-200 font-semibold' : ''
                   }`}
                 onClick={() => setSidebarOpen(false)}
               >
