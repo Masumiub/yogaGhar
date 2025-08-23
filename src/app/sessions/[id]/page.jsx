@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 async function getSession(id) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/sessions/${id}`, {
+  const res = await fetch(`/api/sessions/${id}`, {
     next: { revalidate: 60 }, // ISR every 60s
   });
 
@@ -51,7 +51,7 @@ export default async function SessionDetails({ params }) {
 
 // Pre-generate paths for all sessions (SSG/ISR)
 export async function generateStaticParams() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/sessions`);
+  const res = await fetch(`/api/sessions`);
   const data = await res.json();
 
   const sessions = Array.isArray(data.sessions) ? data.sessions : [];
