@@ -19,7 +19,7 @@ export async function GET() {
     // Fetch all draft sessions
     const sessions = await db
       .collection("yogaSessions")
-      .find({ status: "draft" })
+      .find({ status: "draft" , user_email: userEmail})
       .sort({ date: -1 })
       .toArray();
 

@@ -10,29 +10,29 @@ export default function Footer() {
         <div>
             <div>
 
-                <footer className="footer sm:footer-horizontal bg-base-100 text-black  px-10 py-40">
+                <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content  px-10 py-40">
                     <aside>
                         <div className="">
                             <FaEarthAmericas size={20} />
                         </div>
-                        <h1 className='font-bold text-2xl'>Shabuj Global Education</h1>
+                        <h1 className='font-bold text-2xl'>YogaGhar</h1>
                         <p className='mb-3'>
                             We take pride in our ability to help students achieve their academic goals and succeed in life. <br />
                             Get complete guidance in your study abroad journey from start to finish.
                         </p>
 
-                        <div className='flex items-center gap-2'>
-                            <div className='p-3  rounded-lg'><IoIosCall className='text-black' /> </div>
+                        <div className='flex items-center gap-2 '>
+                            <div className='p-3 bg-purple-700 rounded-lg'><IoIosCall className='text-white' /> </div>
                             <p>+88 000 1111 2233 </p>
                         </div>
 
                         <div className='flex items-center gap-2 mt-3'>
-                            <div className='p-3  rounded-lg'><MdEmail className='text-black' /></div>
+                            <div className='p-3 bg-purple-700 rounded-lg'><MdEmail className='text-white' /></div>
                             <p>sglobal@contact.com</p>
                         </div>
 
                         <div className='flex items-center gap-2 mt-3'>
-                            <div className='p-3  rounded-lg'><FaLocationDot className='text-black' /></div>
+                            <div className='p-3 bg-purple-700 rounded-lg'><FaLocationDot className='text-white' /></div>
                             <p>1216/1/A, Street No - 98, Gulshan <br />
                                 Dhaka, Bangladesh</p>
                         </div>
@@ -41,9 +41,8 @@ export default function Footer() {
                     <nav>
                         <h6 className="footer-title">General</h6>
                         <a className="link link-hover">Home</a>
-                        <a className="link link-hover">Events</a>
+                        <a className="link link-hover">Sessions</a>
                         <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Tests</a>
                     </nav>
                     <nav>
                         <h6 className="footer-title">Company</h6>
@@ -62,7 +61,7 @@ export default function Footer() {
 
 
 
-                <footer className="footer sm:footer-horizontal bg-base-100 text-black items-center p-4">
+                <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
                     <aside className="grid-flow-col items-center">
 
                         <p>Copyright © {new Date().getFullYear()} - All right reserved</p>

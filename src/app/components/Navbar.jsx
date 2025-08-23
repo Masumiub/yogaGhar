@@ -9,23 +9,11 @@ import { CgDarkMode } from "react-icons/cg";
 
 export default function Navbar() {
   const { data: session, status } = useSession();
-  const [theme, setTheme] = useState('light');
+
 
   const router = useRouter();
 
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  };
 
   const handleLogout = async () => {
     await signOut({ redirect: false });
@@ -34,8 +22,8 @@ export default function Navbar() {
 
 
   return (
-    <div>
-      <div className="navbar bg-base-100 text-black shadow-sm py-5">
+    <div className="bg-neutral">
+      <div className="navbar bg-neutral text-neutral-content shadow-sm py-5 max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -79,7 +67,7 @@ export default function Navbar() {
               <div className="ml-2">
                 <FaEarthAmericas />
               </div>
-              <p className="px-3 text-xl font-bold hidden md:block">Shabuj Global Education</p>
+              <p className="px-3 text-xl font-bold hidden md:block">YogaGhar</p>
             </div>
 
           </Link>
@@ -101,13 +89,6 @@ export default function Navbar() {
         </div>
 
         <div className="navbar-end flex gap-2">
-
-          <div className="form-control mt-1">
-            <label className="label cursor-pointer">
-              <CgDarkMode size={25} />
-              <input type="checkbox" className="toggle theme-controller" onChange={toggleTheme} checked={theme === 'dark'} />
-            </label>
-          </div>
 
 
           {status === "loading" ? (
