@@ -146,7 +146,7 @@ export default function LoginForm({ className, ...props }) {
                   <input
                     id="email"
                     name="email"
-                    type="email"
+                    type="email" defaultValue="musfiquemasum@gmail.com"
                     placeholder="Enter your email"
                     className="w-full bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 pl-11 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 dark:focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-200"
                     required
@@ -174,7 +174,7 @@ export default function LoginForm({ className, ...props }) {
                     id="password"
                     name="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
+                    placeholder="Enter your password" defaultValue='admin1234'
                     className="w-full bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 pl-11 pr-11 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 dark:focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-200"
                     required
                   />

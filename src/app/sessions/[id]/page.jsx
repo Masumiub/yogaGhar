@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ObjectId } from "mongodb";
 
 import { Calendar, Clock, User, DollarSign, Timer, MapPin, Users, Star, CheckCircle, AlertCircle, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 // ISR Configuration
 export async function generateStaticParams() {
@@ -251,14 +252,17 @@ export default async function SessionDetails({ params }) {
             Join us for this transformative session and take the next step in your wellness journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white text-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+            {/* <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white text-purple-600 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               <MapPin className="mr-2 w-5 h-5" />
               Get Directions
-            </button>
+            </button> */}
+
+            <Link href='/contact'>
             <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white rounded-full hover:bg-white/30 transform hover:-translate-y-1 transition-all duration-300">
               <Users className="mr-2 w-5 h-5" />
               Contact Support
             </button>
+            </Link>
           </div>
         </div>
       </div>

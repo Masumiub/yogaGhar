@@ -92,7 +92,7 @@ const Header = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start initial-hidden animate-fade-up delay-800">
               <Link 
-                href="/login"
+                href="/sessions"
                 className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-out"
               >
                 <span className="relative z-10">Begin Your Journey</span>
