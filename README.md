@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Yoga Ghar 🧘‍♀️
 
-## Getting Started
+A modern yoga session booking platform built with Next.js 15, Tailwind CSS, and MongoDB. It allows users to browse, schedule, and manage yoga sessions seamlessly with authentication and dynamic features.
 
-First, run the development server:
+# Live Link:
+https://yoga-ghar.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# 📌 Project Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Yoga Ghar is a full-stack yoga session management platform where users can:
+- ✅ Browse published yoga sessions
+- ✅ Book sessions
+- ✅ Manage their bookings
+- ✅ Create sessions (as admin/instructor)
+- ✅ Save sessions as drafts and publish later
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The project uses Next.js App Router, API Routes, and MongoDB for data storage. Authentication is powered by NextAuth.js, and React Hook Form + Zod ensures smooth form handling and validation.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+# ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Browse Yoga Sessions – View published yoga classes with details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- ✅ Draft & Publish Sessions – Admins can save as draft and publish later.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- ✅ Edit & Delete Sessions – Manage sessions via dashboard.
 
-## Deploy on Vercel
+- ✅ Authentication – Secure login using NextAuth.js (Google & Email).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✅ Responsive Design – Fully optimized for desktop & mobile.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- ✅ SEO Optimized – Metadata and structured content.
+
+# 🛠 Tech Stack
+
+## Frontend:
+
+- Next.js 15 (App Router)
+
+- React 18
+
+- Tailwind CSS
+
+## Backend:
+
+- Next.js API Routes
+
+- MongoDB
+
+## Authentication:
+
+- NextAuth.js
+
+- Validation & Forms:
+
+- React Hook Form
+
+- Zod
+
+# 📦 Installed Packages
+- npm install next react react-dom
+- npm install tailwindcss postcss autoprefixer
+- npm install @tanstack/react-query axios
+- npm install next-auth
+- npm install react-hook-form zod
+- npm install framer-motion lucide-react
+
+
+# 🚀 How to Run Locally
+- git clone https://github.com/Masumiub/yogaGhar
+- cd yoga-ghar
+
+2. Install Dependencies
+npm install
+
+3. Configure Environment Variables
+- NEXTAUTH_SECRET=your_nextauth_secret
+- NEXTAUTH_URL=http://localhost:3000
+- NEXT_PUBLIC_BASE_URL=http://localhost:3000
+- GOOGLE_CLIENT_ID=your_google_client_id
+- GOOGLE_CLIENT_SECRET=your_google_client_secret
+- MONGODB_URI=your_mongodb_connection_string
+
+4. Run the Development Server
+- npm run dev
+- http://localhost:3000
+
