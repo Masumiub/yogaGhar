@@ -17,7 +17,7 @@ export default function Services() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Meditation */}
-        <div className="p-6 bg-[#F7DAB5] rounded-2xl shadow hover:shadow-lg transition">
+        <div className="p-6 bg-base-100 rounded-2xl shadow hover:shadow-lg transition">
           <GiMeditation className="text-5xl text-black mb-4" />
           <h3 className="text-xl font-semibold mb-2 text-black">Meditation</h3>
           <p className="text-gray-700">
@@ -27,7 +27,7 @@ export default function Services() {
         </div>
 
         {/* Aromatherapy */}
-        <div className="p-6 bg-[#F7DAB5] rounded-2xl shadow hover:shadow-lg transition">
+        <div className="p-6 bg-base-100 rounded-2xl shadow hover:shadow-lg transition">
           <FaLeaf className="text-5xl text-black mb-4" />
           <h3 className="text-xl font-semibold mb-2 text-black">Aromatherapy</h3>
           <p className="text-gray-700">
@@ -37,7 +37,7 @@ export default function Services() {
         </div>
 
         {/* Yoga Asanas */}
-        <div className="p-6 bg-[#F7DAB5] rounded-2xl shadow hover:shadow-lg transition">
+        <div className="p-6 bg-base-100 rounded-2xl shadow hover:shadow-lg transition">
           <FaSpa className="text-5xl text-black mb-4" />
           <h3 className="text-xl font-semibold mb-2 text-black">Yoga Asanas</h3>
           <p className="text-gray-700">
@@ -47,7 +47,7 @@ export default function Services() {
         </div>
 
         {/* Sound Therapy */}
-        <div className="p-6 bg-[#F7DAB5] rounded-2xl shadow hover:shadow-lg transition">
+        <div className="p-6 bg-base-100 rounded-2xl shadow hover:shadow-lg transition">
           <GiMusicalNotes className="text-5xl text-black mb-4" />
           <h3 className="text-xl font-semibold mb-2 text-black">Sound Therapy</h3>
           <p className="text-gray-700">

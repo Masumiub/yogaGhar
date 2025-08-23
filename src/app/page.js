@@ -5,7 +5,7 @@ import Benefits from "./components/Benefits";
 
 export default function Home() {
   return (
-    <div className="w-full md:w-10/12 mx-auto">
+    <div className="mx-auto">
       <Header></Header>
       <Services></Services>
       <Benefits></Benefits>

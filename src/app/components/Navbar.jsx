@@ -35,7 +35,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <div className="navbar bg-[#F7DAB5] text-black shadow-sm py-5">
+      <div className="navbar bg-base-100 text-black shadow-sm py-5">
         <div className="navbar-start">
           <div className="dropdown">
             <div

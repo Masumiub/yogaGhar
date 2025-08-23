@@ -10,7 +10,7 @@ export default function Footer() {
         <div>
             <div>
 
-                <footer className="footer sm:footer-horizontal bg-[#F7DAB5] text-black  px-10 py-40">
+                <footer className="footer sm:footer-horizontal bg-base-100 text-black  px-10 py-40">
                     <aside>
                         <div className="">
                             <FaEarthAmericas size={20} />
@@ -62,7 +62,7 @@ export default function Footer() {
 
 
 
-                <footer className="footer sm:footer-horizontal bg-[#F7DAB5] text-black items-center p-4">
+                <footer className="footer sm:footer-horizontal bg-base-100 text-black items-center p-4">
                     <aside className="grid-flow-col items-center">
 
                         <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
