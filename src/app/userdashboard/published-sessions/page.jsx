@@ -2,19 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { FaEdit, FaTrash, FaEye, FaCalendarAlt, FaClock, FaUser, FaTag } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 export default function ManageSessions() {
   const [sessions, setSessions] = useState([]);
   const [editSession, setEditSession] = useState(null);
-  const [formData, setFormData] = useState({ 
-    title: "", 
-    description: "", 
-    price: "", 
-    instructor: "", 
-    date: "", 
-    time: "", 
-    duration: "", 
-    tags: "" 
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    price: "",
+    instructor: "",
+    date: "",
+    time: "",
+    duration: "",
+    tags: ""
   });
 
   const fetchSessions = async () => {
@@ -36,13 +37,13 @@ export default function ManageSessions() {
 
   const openEditModal = (session) => {
     setEditSession(session);
-    
+
     // normalize tags: ensure it's an array
     const tagsArray = Array.isArray(session.tags)
       ? session.tags
       : session.tags
-      ? session.tags.split(",").map(t => t.trim())
-      : [];
+        ? session.tags.split(",").map(t => t.trim())
+        : [];
 
     setFormData({
       title: session.title,
@@ -64,8 +65,19 @@ export default function ManageSessions() {
       body: JSON.stringify(formData),
     });
     if (res.ok) {
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      
       fetchSessions();
       setEditSession(null);
+
+
     }
   };
 
@@ -173,7 +185,7 @@ export default function ManageSessions() {
                   required
                 />
               </div>
-              
+
               <div>
                 <label className="label">
                   <span className="label-text">Description</span>
@@ -187,7 +199,7 @@ export default function ManageSessions() {
                   required
                 />
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="label">
@@ -202,7 +214,7 @@ export default function ManageSessions() {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label className="label">
                     <span className="label-text">Instructor</span>
@@ -216,7 +228,7 @@ export default function ManageSessions() {
                   />
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="label">
@@ -229,7 +241,7 @@ export default function ManageSessions() {
                     className="w-full input input-bordered"
                   />
                 </div>
-                
+
                 <div>
                   <label className="label">
                     <span className="label-text">Time</span>
@@ -242,7 +254,7 @@ export default function ManageSessions() {
                   />
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="label">
@@ -256,7 +268,7 @@ export default function ManageSessions() {
                     className="w-full input input-bordered"
                   />
                 </div>
-                
+
                 <div>
                   <label className="label">
                     <span className="label-text">Tags (comma separated)</span>
@@ -270,7 +282,7 @@ export default function ManageSessions() {
                   />
                 </div>
               </div>
-              
+
               <div className="flex justify-end gap-3 mt-6">
                 <button
                   type="button"

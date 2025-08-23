@@ -8,6 +8,7 @@ import Link from "next/link";
 import { User, Mail, Lock, Eye, EyeOff, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 const registerSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -34,11 +35,25 @@ export default function RegisterPage() {
     });
 
     if (res.ok) {
-      alert("User registered successfully!");
+      //alert("User registered successfully!");
+                  Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Registration successful",
+              showConfirmButton: false,
+              timer: 1500
+            });
        router.push("/login");
     } else {
       const err = await res.json();
-      alert(err.message || "Registration failed");
+            Swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: "Registration failed",
+              showConfirmButton: false,
+              timer: 1500
+            });
+      //alert(err.message || "Registration failed");
     }
   };
 

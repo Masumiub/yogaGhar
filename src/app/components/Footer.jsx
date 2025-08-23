@@ -17,9 +17,9 @@ export default function Footer() {
 
     return (
         <div>
-            <div>
+            <div className='bg-neutral'>
 
-                <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content  px-10 py-40">
+                <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content  px-10 py-40 max-w-7xl mx-auto">
                     <aside>
                         <div className="">
                             <FaEarthAmericas size={20} />

@@ -5,6 +5,7 @@ import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight } from "lucide-react";
+import Swal from "sweetalert2";
 
 export default function LoginForm({ className, ...props }) {
   const router = useRouter();
@@ -27,9 +28,24 @@ export default function LoginForm({ className, ...props }) {
     setLoading(false);
 
     if (!res.error) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Login Successful",
+        showConfirmButton: false,
+        timer: 1500
+      });
+
       router.push("/");
     } else {
-      alert("Invalid email or password");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Invalid email or password",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      // alert("Invalid email or password");
     }
   };
 
@@ -46,14 +62,14 @@ export default function LoginForm({ className, ...props }) {
       </div>
 
       <div className="relative w-full max-w-6xl grid lg:grid-cols-2 gap-8 items-center">
-        
+
         {/* Left Side - Welcome Content */}
         <div className="hidden lg:flex flex-col justify-center space-y-8 p-8">
           <div className="space-y-6">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl shadow-2xl">
               <Sparkles className="w-10 h-10 text-white" />
             </div>
-            
+
             <div className="space-y-4">
               <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent leading-tight">
                 Welcome Back to yogaGhar
@@ -83,7 +99,7 @@ export default function LoginForm({ className, ...props }) {
         {/* Right Side - Login Form */}
         <div className="w-full max-w-md mx-auto lg:mx-0">
           <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-white/20 dark:border-gray-700/30 rounded-3xl shadow-2xl shadow-blue-200/20 dark:shadow-purple-900/30 p-8">
-            
+
             {/* Mobile Header */}
             <div className="lg:hidden text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
@@ -197,8 +213,8 @@ export default function LoginForm({ className, ...props }) {
             <div className="mt-6 text-center">
               <p className="text-gray-600 dark:text-gray-300">
                 Don't have an account?{" "}
-                <a 
-                  href="/register" 
+                <a
+                  href="/register"
                   className="font-medium text-blue-600 dark:text-purple-400 hover:text-blue-700 dark:hover:text-purple-300 transition-colors duration-200"
                 >
                   Create one now

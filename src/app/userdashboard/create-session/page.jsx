@@ -65,20 +65,39 @@ export default function CreateSessionPage() {
         statusType, // "draft" or "publish"
       };
 
-      console.log("Sending session:", newSession);
+      //console.log("Sending session:", newSession);
 
       const response = await axios.post("/api/sessions", newSession);
 
-      alert(
-        statusType === "publish"
-          ? "Session published successfully!"
-          : "Draft saved successfully!"
-      );
-      console.log("API Response:", response.data);
+      await Swal.fire({
+        title: 'Success!',
+        text: statusType === "publish"
+          ? 'Session published successfully!'
+          : 'Draft saved successfully!',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#8B5CF6',
+        background: '#fff',
+        iconColor: '#10B981',
+        timer: 3000,
+        timerProgressBar: true,
+      });
+      //console.log("API Response:", response.data);
 
     } catch (err) {
-      console.error("Error creating session:", err.response || err);
-      alert("Failed to create session");
+      //console.error("Error creating session:", err.response || err);
+      //alert("Failed to create session");
+
+      await Swal.fire({
+        title: 'Error!',
+        text: 'Failed to create session. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#EF4444',
+        background: '#fff',
+        iconColor: '#EF4444',
+      });
+
     } finally {
       setLoading(false);
     }
@@ -91,57 +110,57 @@ export default function CreateSessionPage() {
         {/* Title */}
         <div>
           <label className="block font-medium">Title</label>
-          <input type="text" {...register("title")} className="w-full p-2 rounded input"/>
+          <input type="text" {...register("title")} className="w-full p-2 rounded input" />
           {errors.title && <p className="text-red-500">{errors.title.message}</p>}
         </div>
 
         {/* Description */}
         <div>
           <label className="block font-medium">Description</label>
-          <textarea {...register("description")} className="w-full p-2 rounded input"/>
+          <textarea {...register("description")} className="w-full p-2 rounded input" />
           {errors.description && <p className="text-red-500">{errors.description.message}</p>}
         </div>
 
         {/* Instructor */}
         <div>
           <label className="block font-medium">Instructor</label>
-          <input type="text" {...register("instructor")} className="w-full p-2 input rounded"/>
+          <input type="text" {...register("instructor")} className="w-full p-2 input rounded" />
           {errors.instructor && <p className="text-red-500">{errors.instructor.message}</p>}
         </div>
 
         {/* Date & Time */}
         <div>
           <label className="block font-medium">Date</label>
-          <input type="date" {...register("date")} className="w-full p-2 input rounded"/>
+          <input type="date" {...register("date")} className="w-full p-2 input rounded" />
           {errors.date && <p className="text-red-500">{errors.date.message}</p>}
         </div>
-        <input type="time" {...register("time")} className="w-full p-2 input"/>
+        <input type="time" {...register("time")} className="w-full p-2 input" />
         {errors.time && <p className="text-red-500">{errors.time.message}</p>}
 
         {/* Duration */}
         <div>
           <label className="block font-medium">Duration (e.g. 60 mins)</label>
-          <input type="text" {...register("duration")} className="w-full p-2 input rounded"/>
+          <input type="text" {...register("duration")} className="w-full p-2 input rounded" />
           {errors.duration && <p className="text-red-500">{errors.duration.message}</p>}
         </div>
 
         {/* Price */}
         <div>
           <label className="block font-medium">Price ($)</label>
-          <input type="number" {...register("price")} className="w-full p-2 input rounded"/>
+          <input type="number" {...register("price")} className="w-full p-2 input rounded" />
           {errors.price && <p className="text-red-500">{errors.price.message}</p>}
         </div>
 
         {/* Tags */}
         <div>
           <label className="block font-medium">Tags (comma separated)</label>
-          <input type="text" {...register("tags")} placeholder="yoga, meditation" className="w-full p-2 input rounded"/>
+          <input type="text" {...register("tags")} placeholder="yoga, meditation" className="w-full p-2 input rounded" />
         </div>
 
         {/* Image */}
         <div>
           <label className="block font-medium">Image</label>
-          <input type="file" {...register("image")} className="w-full p-2 input"/>
+          <input type="file" {...register("image")} className="w-full p-2 input" />
           {errors.image && <p className="text-red-500">{errors.image.message}</p>}
         </div>
 
