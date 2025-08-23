@@ -26,8 +26,7 @@ export default function Footer() {
                         </div>
                         <h1 className='font-bold text-2xl'>YogaGhar</h1>
                         <p className='mb-3'>
-                            We take pride in our ability to help students achieve their academic goals and succeed in life. <br />
-                            Get complete guidance in your study abroad journey from start to finish.
+Join thousands on their journey to wellness through authentic yoga practices, <br /> guided meditation, and mindful living.  Discover the ancient wisdom <br /> that brings balance to modern life.
                         </p>
 
                         <div className='flex items-center gap-2 '>
@@ -37,7 +36,7 @@ export default function Footer() {
 
                         <div className='flex items-center gap-2 mt-3'>
                             <div className='p-3 bg-purple-700 rounded-lg'><MdEmail className='text-white' /></div>
-                            <p>sglobal@contact.com</p>
+                            <p>yogaghar@contact.com</p>
                         </div>
 
                         <div className='flex items-center gap-2 mt-3'>

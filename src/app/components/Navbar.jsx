@@ -6,14 +6,17 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaEarthAmericas } from "react-icons/fa6";
 import { CgDarkMode } from "react-icons/cg";
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+      const pathname = usePathname();
+
+          if (pathname.startsWith('/userdashboard')) {
+        return null;
+    }
   const { data: session, status } = useSession();
 
-
   const router = useRouter();
-
-
 
   const handleLogout = async () => {
     await signOut({ redirect: false });
