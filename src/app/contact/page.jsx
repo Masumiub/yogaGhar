@@ -14,7 +14,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-purple-900 transition-colors duration-300">
       {/* Hero Section */}
-      <div className=" text-white py-16">
+      <div className=" text-gray-900 dark:text-white py-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl opacity-90">Get in touch with yogaGhar - Your journey to wellness starts here</p>
@@ -26,8 +26,8 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Get In Touch</h2>
-              <p className=" text-lg text-white leading-relaxed">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Get In Touch</h2>
+              <p className=" text-lg text-gray-900 dark:text-white leading-relaxed">
                 Ready to begin your yoga journey? We're here to help you find the perfect class 
                 and answer any questions you may have. Reach out to us through any of the 
                 channels below.
